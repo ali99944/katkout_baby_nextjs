@@ -21,13 +21,13 @@ export default function CategoriesPage() {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState<{ id: number; name: string } | null>(null)
 
-  const handleCreateCategory = (newCategory) => {
+  const handleCreateCategory = (newCategory: { name: string }) => {
     const newId = Math.max(...categories.map(c => c.id)) + 1
     setCategories([...categories, { ...newCategory, id: newId, productCount: 0 }])
     setIsCreateModalOpen(false)
   }
 
-  const handleEditCategory = (editedCategory) => {
+  const handleEditCategory = (editedCategory: { id: number; name: string }) => {
     setCategories(categories.map(category => 
       category.id === editedCategory.id ? { ...category, name: editedCategory.name } : category
     ))

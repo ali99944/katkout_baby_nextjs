@@ -6,12 +6,22 @@ import { X } from 'lucide-react'
 import ImageUpload from './ImageUpload'
 import MultiImageUpload from './MultiImageUpload'
 
+interface Product {
+  name: string
+  price: number
+  description: string
+  category: string
+  sizes: string[]
+  features: string[]
+  mainImage: string
+  additionalImages: string[]
+}
 
 interface ProductModalProps {
   isOpen: boolean
   onClose: () => void
-  onSave: (product: unknown) => void
-  product?: unknown
+  onSave: (product: Product) => void
+  product?: Product
   categories: { id: number; name: string }[]
 }
 
@@ -85,7 +95,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, onClose, onSave, pr
       mainImage: mainImage,
       additionalImages: additionalImages,
     }
-    onSave(productData)
+    onSave(productData as unknown as Product)
     onClose()
   }
 
@@ -221,11 +231,11 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, onClose, onSave, pr
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">الصورة الرئيسية</label>
-                <ImageUpload onImageUpload={(file) => setMainImage(file)} initialImage={product?.images[0]} />
+                <ImageUpload onImageUpload={(file) => setMainImage(file)} initialImage={product?.additionalImages[0]} />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">صور إضافية</label>
-                <MultiImageUpload onImagesUpload={(files) => setAdditionalImages(files)} initialImages={product?.images.slice(1)} />
+                <MultiImageUpload onImagesUpload={(files) => setAdditionalImages(files)} initialImages={product?.additionalImages.slice(1)} />
               </div>
               <div className="flex justify-end">
                 <button
