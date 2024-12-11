@@ -73,14 +73,6 @@ export default function CartPage() {
   const shipping = subtotal > 300 ? 0 : 30
   const total = subtotal + shipping - discount
 
-  const applyCoupon = () => {
-    if (couponCode.toLowerCase() === 'خصم10') {
-      setDiscount(subtotal * 0.1)
-    } else {
-      setDiscount(0)
-    }
-  }
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setClientDetails(prev => ({ ...prev, [name]: value }))
