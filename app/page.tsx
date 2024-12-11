@@ -5,7 +5,7 @@ import Categories from './components/Categories'
 import NewArrivals from './components/NewArrivals'
 import SpecialOffers from './components/SpecialOffers'
 import Features from './components/Features'
-import Newsletter from './components/NewsLetter'
+import Newsletter from './components/Newsletter'
 
 async function getNewArrivals() {
   // Simulate API call
