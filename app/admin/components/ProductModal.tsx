@@ -10,8 +10,8 @@ import MultiImageUpload from './MultiImageUpload'
 interface ProductModalProps {
   isOpen: boolean
   onClose: () => void
-  onSave: (product: any) => void
-  product?: any
+  onSave: (product: unknown) => void
+  product?: unknown
   categories: { id: number; name: string }[]
 }
 

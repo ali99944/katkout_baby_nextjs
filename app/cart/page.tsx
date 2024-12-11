@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -37,7 +37,7 @@ const initialCartItems = [
 
 export default function CartPage() {
   const [cartItems, setCartItems] = useState(initialCartItems)
-  const [couponCode, setCouponCode] = useState('')
+  const [couponCode] = useState('')
   const [discount, setDiscount] = useState(0)
   const [showOrderConfirmation, setShowOrderConfirmation] = useState(false)
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false)
