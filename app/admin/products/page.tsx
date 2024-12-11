@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Plus, Edit, Trash2 } from 'lucide-react'
 import Image from 'next/image'
 import DeleteModal from '../components/DeleteModal'

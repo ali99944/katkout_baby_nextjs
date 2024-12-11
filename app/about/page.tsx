@@ -115,7 +115,7 @@ export default function AboutUs() {
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <span className="text-[#FF9D1B] ml-2">✓</span>
-                    <span>برنامج "دفء الشتاء" لتوزيع الملابس الشتوية على الأطفال المحتاجين</span>
+                    <span>برنامج &quot;دفء الشتاء&quot; لتوزيع الملابس الشتوية على الأطفال المحتاجين</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#FF9D1B] ml-2">✓</span>

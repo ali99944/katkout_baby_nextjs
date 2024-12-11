@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Home, ShoppingBag, Users, BarChart2, Settings, LogOut, ChevronLeft, ChevronRight } from 'lucide-react'
-import Image from 'next/image'
 
 const Sidebar = () => {
   const pathname = usePathname()
