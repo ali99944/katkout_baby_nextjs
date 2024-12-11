@@ -37,8 +37,6 @@ const initialCartItems = [
 
 export default function CartPage() {
   const [cartItems, setCartItems] = useState(initialCartItems)
-  const [couponCode] = useState('')
-  const [discount, setDiscount] = useState(0)
   const [showOrderConfirmation, setShowOrderConfirmation] = useState(false)
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false)
   const [itemToDelete, setItemToDelete] = useState(null)
@@ -71,7 +69,7 @@ export default function CartPage() {
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const shipping = subtotal > 300 ? 0 : 30
-  const total = subtotal + shipping - discount
+  const total = subtotal + shipping
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -195,12 +193,6 @@ export default function CartPage() {
                     <span>الشحن:</span>
                     <span>{shipping === 0 ? 'مجاني' : `${shipping} ر.س`}</span>
                   </div>
-                  {discount > 0 && (
-                    <div className="flex justify-between text-green-600">
-                      <span>الخصم:</span>
-                      <span>- {discount} ر.س</span>
-                    </div>
-                  )}
                   <div className="flex justify-between font-bold text-lg">
                     <span>الإجمالي:</span>
                     <span>{total} ر.س</span>
